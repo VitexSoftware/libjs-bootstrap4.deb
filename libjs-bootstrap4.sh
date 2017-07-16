@@ -3,14 +3,17 @@
 rm -rf build
 if [ -d "bootstrap" ]; then
   cd bootstrap
-  git pull
+  git fetch origin v4-dev
+  git reset --hard FETCH_HEAD
+  git clean -df
 else
-  git clone git@github.com:twbs/bootstrap.git
+  git clone -b v4-dev  git@github.com:twbs/bootstrap.git
   cd bootstrap
 fi
 
+bundle install
 npm install
-npm run build
+#npm run build
 npm run dist
 
 if [ -e "../build" ]; then
@@ -25,7 +28,7 @@ VERSION=`cat _config.yml | grep current_version | awk '{ print $2 }'`
 #dch -v $VERSION-1 --package libjs-twitter-bootstrap $CHANGES
 cd ..
 
-dch -v $VERSION-$BUILD --package libjs-twitter-bootstrap 
+dch -v $VERSION-$BUILD --package libjs-bootstrap4
 
 debuild -i -us -uc -b
 

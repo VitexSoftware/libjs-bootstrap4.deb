@@ -1,12 +1,12 @@
-Source: libjs-twitter-bootstrap
-Build-Depends: debhelper (>= 7.0.50~), yui-compressor
+Source: libjs-bootstrap4
+Build-Depends: debhelper (>= 7.0.50~), yui-compressor,ruby-bundler
 Standards-Version: 3.8.4
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Uploaders: Vitex <vitex@hippy.cz>
 Priority: optional
 Homepage: http://twitter.github.io/bootstrap/index.html
 
-Package: libjs-twitter-bootstrap
+Package: libjs-bootstrap4
 Architecture: all
 Depends: ${misc:Depends},libjs-jquery (>= 1.4)
 Recommends: libjs-fuelux
@@ -17,7 +17,7 @@ Description: Front-end framework for faster and easier web development.
  for typography, forms, buttons, charts, navigation and other interface 
  components, as well as optional JavaScript extensions.
 
-Package: libjs-twitter-bootstrap-docs
+Package: libjs-bootstrap4-docs
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}

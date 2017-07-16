@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-PKG_PATH:=/usr/share/twitter-bootstrap
-DH_LINKS_FILE:=debian/libjs-twitter-bootstrap.links
+PKG_PATH:=/usr/share/twitter-bootstrap4
+DH_LINKS_FILE:=debian/libjs-twitter-bootstrap4.links
 BUILD_DIR:=build
 
 %:
@@ -18,23 +18,23 @@ override_dh_auto_build:
 	cp -rv bootstrap/docs $(BUILD_DIR)
 	cp -rv bootstrap/js/tests $(BUILD_DIR)/js
 
-#	yui-compressor ~/Projects/3RDParty/bootstrap/docs/assets/css/bootstrap-responsive.css -o $(BUILD_DIR)/bootstrap-responsive.min.css
-#	yui-compressor ~/Projects/3RDParty/bootstrap/docs/assets/css/bootstrap.css -o $(BUILD_DIR)/bootstrap.min.css
-#	cp ~/Projects/3RDParty/bootstrap/docs/assets/css/bootstrap-responsive.css $(BUILD_DIR)/bootstrap-responsive.css
-#	cp ~/Projects/3RDParty/bootstrap/docs/assets/css/bootstrap.css $(BUILD_DIR)/bootstrap.css
+#	yui-compressor ~/Projects/3RDParty/bootstrap4/docs/assets/css/bootstrap4-responsive.css -o $(BUILD_DIR)/bootstrap4-responsive.min.css
+#	yui-compressor ~/Projects/3RDParty/bootstrap4/docs/assets/css/bootstrap4.css -o $(BUILD_DIR)/bootstrap4.min.css
+#	cp ~/Projects/3RDParty/bootstrap4/docs/assets/css/bootstrap4-responsive.css $(BUILD_DIR)/bootstrap4-responsive.css
+#	cp ~/Projects/3RDParty/bootstrap4/docs/assets/css/bootstrap4.css $(BUILD_DIR)/bootstrap4.css
 
-#	echo "$(PKG_PATH)/files/js/bootstrap.js $(PKG_PATH)/files/bootstrap.js" > $(DH_LINKS_FILE)
-#	echo "$(PKG_PATH)/files/js/bootstrap.min.js $(PKG_PATH)/files/bootstrap.min.js" >> $(DH_LINKS_FILE)
-#	echo "$(PKG_PATH)/files/js/bootstrap.min.js /usr/share/javascript/twitter-bootstrap/bootstrap.min.js" >> $(DH_LINKS_FILE)
-#	echo "$(PKG_PATH)/files/css/bootstrap.css /usr/share/javascript/twitter-bootstrap/css/bootstrap.css" >> $(DH_LINKS_FILE)
-#	echo "$(PKG_PATH)/files/fonts/* /usr/share/javascript/twitter-bootstrap/fonts" >> $(DH_LINKS_FILE)
+#	echo "$(PKG_PATH)/files/js/bootstrap4.js $(PKG_PATH)/files/bootstrap4.js" > $(DH_LINKS_FILE)
+#	echo "$(PKG_PATH)/files/js/bootstrap4.min.js $(PKG_PATH)/files/bootstrap4.min.js" >> $(DH_LINKS_FILE)
+#	echo "$(PKG_PATH)/files/js/bootstrap4.min.js /usr/share/javascript/twitter-bootstrap4/bootstrap4.min.js" >> $(DH_LINKS_FILE)
+#	echo "$(PKG_PATH)/files/css/bootstrap4.css /usr/share/javascript/twitter-bootstrap4/css/bootstrap4.css" >> $(DH_LINKS_FILE)
+#	echo "$(PKG_PATH)/files/fonts/* /usr/share/javascript/twitter-bootstrap4/fonts" >> $(DH_LINKS_FILE)
 	dh_auto_build
 
 override_dh_auto_install:
 	dh_auto_install
-	mkdir -p debian/libjs-twitter-bootstrap-docs/usr/share/doc/libjs-twitter-bootstrap-docs
-	cp $(BUILD_DIR)/README.md debian/libjs-twitter-bootstrap-docs/usr/share/doc/libjs-twitter-bootstrap-docs/README.css
-#	for html in debian/libjs-twitter-bootstrap-docs/usr/share/doc/libjs-twitter-bootstrap-docs/html/examples/*/*.html; do
+	mkdir -p debian/libjs-bootstrap4-docs/usr/share/doc/libjs-bootstrap4-docs
+	cp $(BUILD_DIR)/README.md debian/libjs-bootstrap4-docs/usr/share/doc/libjs-bootstrap4-docs/README.css
+#	for html in debian/libjs-bootstrap4-docs/usr/share/doc/libjs-twitter-bootstrap4-docs/html/examples/*/*.html; do
 #	done
 
 override_dh_auto_clean:

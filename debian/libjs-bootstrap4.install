@@ -1,0 +1,3 @@
+build/js/*.js                 /usr/share/twitter-bootstrap4/js
+build/css/*.css               /usr/share/twitter-bootstrap4/css
+debian/local/*     	      /etc/apache2/conf-available/

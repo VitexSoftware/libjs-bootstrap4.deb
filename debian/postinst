@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [ ! -L /usr/share/javascript/twitter-bootstrap ]; then
-    ln -s /usr/share/twitter-bootstrap/files /usr/share/javascript/twitter-bootstrap
+if [ ! -L /usr/share/javascript/twitter-bootstrap4 ]; then
+    ln -s /usr/share/twitter-bootstrap4/files /usr/share/javascript/twitter-bootstrap4
 fi
 
 if which a2enconf >/dev/null; then
-    a2enconf twitter-bootstrap -q
+    a2enconf twitter-bootstrap4 -q
     service apache2 reload
 else
     if [ -d "/etc/apache2/conf.d" ]; then
-	if [ ! -L /etc/apache2/conf.d/twitter-bootstrap.conf ]; then
-          ln -s /etc/apache2/conf-available/twitter-bootstrap.conf /etc/apache2/conf.d/twitter-bootstrap.conf
+	if [ ! -L /etc/apache2/conf.d/twitter-bootstrap4.conf ]; then
+          ln -s /etc/apache2/conf-available/twitter-bootstrap4.conf /etc/apache2/conf.d/twitter-bootstrap4.conf
 	  service apache2 reload
 	fi    
     fi    
